@@ -21,5 +21,10 @@
           <%= f.text_area :comment, :size=>"60x3",placeholder: "コメントする" %>
           <%= f.submit "送信する", class: "btn btn-success mb-4" %>
         <% end %>
+
+        <p>コメント件数: <%= @comments.count %></p>
+        <% @comments.each do |comment| %>
+          <div class="comments-index mb-2">
+          
   </div>
 </div>     
