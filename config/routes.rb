@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
   devise_for :users
   resources :posts do
+    resources :users, only:[:index, :show]
     resources :comments, only: [:create, :destroy]
     resources :favorites, only:[:create, :destroy]
   end
