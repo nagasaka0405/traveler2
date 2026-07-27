@@ -13,4 +13,14 @@ class User < ApplicationRecord
   has_many :follower_user, through: :followed, source: :follower
 
   has_one_attached :profile_image
+
+  # ユーザーをフォローする
+  def follow(user_id)
+    follower.find_by(followed_id: user_id).destroy
+  end
+
+  # フォローしていればtrueを返す
+  def following?(user)
+    following_user.include?(user)
+  end
 end
