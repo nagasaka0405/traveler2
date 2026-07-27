@@ -16,6 +16,11 @@ class User < ApplicationRecord
 
   # ユーザーをフォローする
   def follow(user_id)
+    follower.find_by(followed_id: user_id)
+  end
+
+  # ユーザーのフォローを外す
+  def unfollow(user_id)
     follower.find_by(followed_id: user_id).destroy
   end
 
