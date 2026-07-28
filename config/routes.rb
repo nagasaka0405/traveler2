@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only:[:index, :show, :edit, :update]
+    member do
+      get :follows, :followers
+    end
+    resources :relationships, only: [:create, :destroy]
+  end
   resources :posts do
     resources :comments, only: [:create, :destroy]
     resources :favorites, only:[:create, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
