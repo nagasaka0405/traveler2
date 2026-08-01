@@ -12,6 +12,9 @@
         <%= link_to "プロフィール編集", edit_user_path(@user), class btn btn-success" %>
       </p>
     <% end %>
+    <% if current_user != @user %>
+      <% if current_user.following?(@user) %>
+        <p class="d-flex align-self-end">
     <div class="d-flex w-100">
       <% if @user.profile_image.attached? %>
         <%= image_tag @user.profile_image, size: '100x100', class: "mb-3 profile-img" %>
