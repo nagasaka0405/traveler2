@@ -20,6 +20,9 @@
     <% if @post.image.attached? %>
      <%= image_tag @post.image.varient(resize_to_limit: [450, 350]) %><br>
     <% end %>
+    <div class="form-group">
+      <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: "custom-select w-25 mb-3"} %>
+    </div>
     <h4>画像を変更する</h4>
     <%= f.file_field :image %><br>
     <%= f.submit '保存' %>
