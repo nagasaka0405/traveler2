@@ -42,6 +42,10 @@ class PostsController < ApplicationController
     post.destroy
     redirect_to posts_path
   end
+
+  def confirm
+    @post = current_user.posts.draft.page(params[:page]).reverse_order
+  end
   
   private
   def post_params
