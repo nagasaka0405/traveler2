@@ -11,3 +11,36 @@
     background: linear-gradient(to right, rgba(13, 128, 214, 0.42), rgba(0, 107, 139, 0.12)); 
 }   
 
+.box-inner {
+    padding: 20px 26px;
+    background-color: white;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    color: #111111;
+}
+
+.box-name {
+    margin-bottom: 13px;
+}
+
+.box-email {
+    margin-bottom 13px;
+}
+
+.box-password {
+    margin-bottom: 22px;
+}
+
+.box-name label, .box-email label, .box-password label {
+    font-weight: 700;
+    font-size: 13px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+
